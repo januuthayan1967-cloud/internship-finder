@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    @apply bg-gray-50 text-gray-900 transition-colors duration-200 antialiased;
+  }
+
+  .dark body,
+  html.dark body {
+    @apply bg-gray-950 text-gray-100;
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .btn-primary {
+    @apply bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-medium py-2.5 px-5 rounded-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-md shadow-indigo-500/20 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 font-medium py-2.5 px-5 rounded-xl transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] border border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400 dark:focus:ring-gray-600 focus:ring-offset-2 dark:focus:ring-offset-gray-900;
+  }
+
+  .btn-outline-primary {
+    @apply border border-indigo-500 text-indigo-600 dark:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-950/50 hover:text-indigo-700 dark:hover:text-indigo-300 font-medium py-2.5 px-5 rounded-xl transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-indigo-500;
+  }
+
+  /* Input Field Styles */
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800/90 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200 shadow-sm;
+  }
+
+  /* Form Helpers */
+  .form-group {
+    @apply space-y-2;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5;
+  }
+
+  .form-error {
+    @apply text-sm text-red-600 dark:text-red-400 mt-1;
+  }
+
+  /* Card Styles */
+  .card {
+    @apply bg-white dark:bg-gray-800/90 rounded-2xl shadow-sm hover:shadow-md border border-gray-100 dark:border-gray-700/60 p-6 transition-all duration-200 text-gray-900 dark:text-gray-100;
+  }
+
+  /* Tag/Badge Styles */
+  .tag-blue {
+    @apply px-3 py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-sm font-medium rounded-full inline-flex items-center;
+  }
+
+  .tag-primary {
+    @apply px-2.5 py-1 bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 text-xs font-medium rounded-full;
+  }
+
+  .tag-green {
+    @apply px-2.5 py-1 bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 text-xs font-medium rounded-full;
+  }
+
+  .tag-secondary {
+    @apply px-2.5 py-1 bg-gray-100 dark:bg-gray-700/60 text-gray-600 dark:text-gray-300 text-xs font-medium rounded-full;
+  }
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 10px;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #4b5563;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* Existing Animations Preserved */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes bounceSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out forwards;
+}
+
+.animate-bounce-slow {
+  animation: bounceSlow 2s infinite ease-in-out;
+}
+
+.animate-shake {
+  animation: shake 0.8s ease-in-out;
+}

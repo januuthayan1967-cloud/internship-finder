@@ -1,0 +1,36 @@
+{
+  "name": "internship-finder",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -n \"CLIENT,SERVER\" -c \"cyan,magenta\" \"npm run dev --prefix client\" \"npm run dev --prefix server\"",
+    "client": "npm run dev --prefix client",
+    "server": "npm run dev --prefix server",
+    "build": "npm run build --prefix client",
+    "lint": "eslint .",
+    "preview": "npm run preview --prefix client",
+    "install-deps": "npm install"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-hot-toast": "^2.6.0",
+    "react-router-dom": "^7.10.0",
+    "react-scripts": "^0.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^10.0.5",
+    "eslint": "^9.13.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "globals": "^15.11.0",
+    "lucide-react": "^0.456.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.14"
+  }
+}
